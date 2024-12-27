@@ -55,7 +55,7 @@
         let playerHeight;
 
         let isColliding = false; // 충돌 발생 여부 플래그
-        let fadeAmount = 0; // 페이드 아웃 효과를 위한 변수
+      
         let fadeInAmount = 255; // 초기 페이드인 효과를 위한 변수 (처음에 완전히 어두운 상태)
 
         function preload() {
@@ -137,15 +137,9 @@
         console.log("Collision detected with " + target.page);
         isColliding = true;
 
-        // 충돌 시 페이드 아웃 효과 시작
-        if (fadeAmount < 255) {
-            fadeAmount += 4; // 천천히 페이드 아웃
-        }
-
-        // 페이드 아웃이 완료되면 페이지 이동
-        if (fadeAmount >= 255) {
-            window.location.href = target.page;
-        }
+        
+        window.location.href = target.page;
+        
         break;
     }
 }
@@ -161,21 +155,13 @@
         rect(0, 0, width, height);
     }
 
-    // 충돌 발생 시 페이드아웃 효과
-    if (isColliding) {
-        fadeScreen();
-        return;
-    }
+    
 }
 
 
         
 
-        // 페이드 아웃 화면
-        function fadeScreen() {
-            fill(0, fadeAmount);
-            rect(0, 0, width, height);
-        }
+        
 
         function keyPressed() {
             // 충돌이 발생하지 않은 경우에만 플레이어 이동
