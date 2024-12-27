@@ -194,7 +194,7 @@
 
             // 충돌 시 페이드 아웃 효과 시작
             if (fadeAmount < 255) {
-                fadeAmount += 4; // 천천히 페이드 아웃
+                fadeAmount += 2; // 천천히 페이드 아웃
             }
 
             // 페이드 아웃이 완료되면 페이지 이동
@@ -211,7 +211,7 @@
 
     // 페이드인 효과 (처음 화면 어두운 상태에서 밝아지는 효과)
     if (fadeInAmount > 0) {
-        fadeInAmount -= 5; // 페이드인 속도 조정
+        fadeInAmount -= 2; // 페이드인 속도 조정
         fill(0, fadeInAmount);
         rect(0, 0, width, height);
     }
