@@ -217,13 +217,20 @@
     }
 
     // 충돌 발생 시 페이드아웃 효과
-     }
+    if (isColliding) {
+        fadeScreen();
+        return;
+    }
+}
 
 
         
 
         // 페이드 아웃 화면
-        
+        function fadeScreen() {
+            fill(0, fadeAmount);
+            rect(0, 0, width, height);
+        }
 
         function keyPressed() {
             // 충돌이 발생하지 않은 경우에만 플레이어 이동
